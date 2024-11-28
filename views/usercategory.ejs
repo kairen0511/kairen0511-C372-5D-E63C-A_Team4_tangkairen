@@ -34,12 +34,16 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1200px;  /* Increased for a wider container */
             margin: 2rem auto;
             padding: 1rem;
             background-color: white;
             border-radius: 8px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;       /* Allows items to wrap into the next row */
+            gap: 1rem;             /* Space between category cards */
+            justify-content: space-between;  /* Evenly distributes cards in a row */
         }
 
         .add-category-btn {
@@ -57,10 +61,11 @@
 
         .category-card {
             padding: 1rem;
-            margin-bottom: 1rem;
             background-color: #f8f9fa;
             border-radius: 8px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 1rem); /* 3 cards per row with spacing */
+            box-sizing: border-box;
         }
 
         .category-actions {
@@ -98,6 +103,20 @@
         .delete-btn:hover {
             background-color: #c82333;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .category-card {
+                width: calc(50% - 1rem); /* 2 cards per row for medium screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .category-card {
+                width: 100%; /* 1 card per row for small screens */
+            }
+        }
+
     </style>
 </head>
 <body>
